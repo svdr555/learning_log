@@ -147,3 +147,19 @@ LOGIN_URL = '/users/login/'
 BOOTSTRAP3 = {
 	'include_jquery': True,
 	}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
