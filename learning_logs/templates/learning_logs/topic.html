@@ -1,31 +1,31 @@
 {% extends "learning_logs/base.html" %}
 
 {% block header %}
-  <h2>{{ topic }}</h2>
+  <h3>{{ topic }}</h3>
 {% endblock header %}
 
 {% block content %}
   <p>
-    <a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a>
+    <a href="{% url 'learning_logs:new_entry' topic.id %}">Voeg inhoud toe</a>
   </p>
 
   {% for entry in entries %}
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3>
+        <h4>
           {{ entry.date_added|date:'M d, Y H:i' }}
           <small>
             <a href="{% url 'learning_logs:edit_entry' entry.id %}">
-              edit entry</a>
+              Bewerk inhoud</a>
           </small>
-        </h3>
+        </h4>
       </div>
       <div class="panel-body">
         {{ entry.text|linebreaks }}
       </div>
     </div> <!-- panel -->
   {% empty %}
-    There are no entries for this topic yet    
+    Er is nog geen inhoud aan dit onderwerp gekoppeld.    
   {% endfor %}  
 
 {% endblock content %}
