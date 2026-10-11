@@ -9,15 +9,15 @@
   <ul>
     {% for topic in topics %}
       <li>
-        <h3>
+        <h4>
           <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
-        </h3>
+        </h4>
       </li>
     {% empty %}
       <li>Nog geen onderwerp toegevoegd.</li>
     {% endfor %}
   </ul>
 
-  <h4><a href="{% url 'learning_logs:new_topic' %}">Voeg een nieuw onderwerp toe:</a></h4>
+  <h5><a href="{% url 'learning_logs:new_topic' %}">Voeg een nieuw onderwerp toe:</a></h5>
 
 {% endblock content %}
