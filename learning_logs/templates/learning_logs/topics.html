@@ -1,7 +1,7 @@
 {% extends "learning_logs/base.html" %}
 
 {% block header %}
-  <h1>Topics</>
+  <h3>Onderwerpen</h3>
 {% endblock header %}
 
 {% block content %}
@@ -14,10 +14,10 @@
         </h3>
       </li>
     {% empty %}
-      <li>No topics have been added yet.</li>
+      <li>Nog geen onderwerp toegevoegd.</li>
     {% endfor %}
   </ul>
 
-  <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a></h3>
+  <h4><a href="{% url 'learning_logs:new_topic' %}">Voeg een nieuw onderwerp toe:</a></h4>
 
 {% endblock content %}
